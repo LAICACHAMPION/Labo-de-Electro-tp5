@@ -3,6 +3,82 @@
 \begin{document}
 
 %capítulo
-\section{Ejercicio 1}
+\section{Ejercicio 1: medici\'on de distorsi\'on arm\'onica}
+
+En esta secci\'on estudiaremos la distorsi\'on arm\'onica de distintos generadores de funciones, para lo cual trabajaremos con se\~nales senoidales de frecuencia 1.7MHz y de 250m$\mathrm{V}_{\mathrm{pp}}$ de amplitud. Puesto que una se\~nal senoidal perfecta s\'olo posee una frecuencia, medir la relaci\'on entre la potencia correspondiente a su fundamental y la de sus arm\'onicos nos permitir\'a tener una idea de la calidad del generador en este aspecto.
+
+\subsection{Agilent 33220A} 
+
+Para este generador, s\'olo pudo observarse en el analizador de espectro el pico correspondiente al primer arm\'onico, mientras que los dem\'as no eran distinguibles del ruido propio del aparato.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+	\hline
+	Arm\'onico		& Frecuencia (MHz)	& Potencia (dBm)	\\ \hline \hline 
+	0			& 1.7				& -14			\\ \hline
+	1			& 3.4				& -66			\\ \hline	
+	\end{tabular}
+	\caption{Mediciones correspondientes al Agilent 33220A}
+\end{table}
+
+Por lo tanto, de acuerdo a estas mediciones la \textit{total harmonic distortion} de este generador es:
+
+\begin{equation}
+	\mathrm{THD} = \frac{\sum_{n=0}^\infty P_n}{P_0} \cdot 100\% \sim \frac{2.51\times 10^{-10}\mathrm{W}}{3.98\times 10^{-5}\mathrm{W}} \cdot 100\% = 0.00063\%
+\end{equation}
+
+Esto se condice con la informaci\'on obtenida de su hoja de datos, seg\'un la cual la THD debe ser menor al 0.04\%.
+
+\subsection{GW Instek GFG-8219A}
+
+En este caso s\'i pod\'ian observarse m\'as arm\'onicos aparte del primero. Se decidi\'o medir 10 arm\'onicos, puesto que para este punto las potencias eran tan peque\~nas que pr\'acticamente no afectaban el resultado del THD.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+	\hline
+	Arm\'onico		& Frecuencia (MHz)	& Potencia (dBm)	\\ \hline \hline 
+	0			& 1.70			& -14.4			\\ \hline
+	1			& 3.40			& -50.4			\\ \hline	
+	2			& 5.10			& -42.8			\\ \hline
+	3			& 6.80			& -64.4			\\ \hline
+	4			& 8.50			& -62.4			\\ \hline
+	5			& 10.2			& -76.4			\\ \hline
+	6			& 11.9			& -66.0			\\ \hline
+	7			& 13.6			& -77.0			\\ \hline
+	8			& 15.3			& -66.6			\\ \hline
+	9			& 17.0			& -77.0			\\ \hline
+	10			& 18.7			& -69.0			\\ \hline
+	\end{tabular}
+	\caption{Mediciones correspondientes al GW Instek GFG-8219A}
+\end{table}
+
+El THD obtenido a partir de estas mediciones es de 0.174\%, lo cual es consistente con el $\leq 1\%$ especificado por la hoja de datos.
+
+
+\subsection{GW Instek GFG-8019G}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+	\hline
+	Arm\'onico		& Frecuencia (MHz)	& Potencia (dBm)	\\ \hline \hline 
+	0			& 1.70			& -1.80			\\ \hline
+	1			& 3.40			& -39.6			\\ \hline	
+	2			& 5.10			& -29.0			\\ \hline
+	3			& 6.80			& -48.2			\\ \hline
+	4			& 8.50			& -44.6			\\ \hline
+	5			& 10.2			& -64.0			\\ \hline
+	6			& 11.9			& -62.0			\\ \hline
+	7			& 13.6			& -63.2			\\ \hline
+	8			& 15.3			& -65.2			\\ \hline
+	9			& 17.0			& -66.6			\\ \hline
+	10			& 18.7			& -61.6			\\ \hline
+	\end{tabular}
+	\caption{Mediciones correspondientes al GW Instek GFG-8019G}
+\end{table}
+
+El THD obtenido a partir de estos datos es de 0.215\%. Tambi\'en en este caso se esperaba un resultado $\leq 1\%$, es decir que se verific\'o la informaci\'on provista por el fabricante.
 
 \end{document}
