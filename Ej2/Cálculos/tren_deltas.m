@@ -13,8 +13,8 @@ y = zeros([1 N]);
 
 
 for n = 1:N  
-     if(rem(n,3))   %si es impar
-         y(n) = (A/2)^(2)/50;
+     if(rem(n,2))   %si es impar
+         y(n) = 8 *A*(-1)^((n-1)/2)/ n^2 / pi()^2;
      end;
 end;
 
