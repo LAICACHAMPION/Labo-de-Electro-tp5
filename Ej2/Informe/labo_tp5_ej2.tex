@@ -78,6 +78,12 @@ Se obtienen los coeficientes en serie trigonométrica de fourier para dicha señ
 	     	 \end{array}
 	     	\right.
  	\end{equation}
+Por lo que el desarrollo en serie de fourier de x(t) queda expresado como:\par
+\begin{center}
+$$x(t) = \sum_{k = 1}^{\infty}\frac{2\cdot A}{\pi\cdot n}\cdot sen(\frac{\pi\cdot n\cdot d}{T})\cdot cos(\frac{2\pi\cdot n\cdot t}{T})$$
+\end{center}
+De esta manera, observando los armónicos que se anulan se podrá deducir la relación $\frac{d}{T}$ que determina el duty cycle.\par
+Como en la serie anterior observamos que se anulan los armónicos pares, entonces $sen(\frac{\pi\cdot n\cdot d}{T}) = 0$, $\forall n = 2k$, con $k \epsilon \mathbb{Z}$. Por ende deducimos que $\frac{d}{T} = \frac{1}{2}$, por ende el duty cycle de la señal es del 50\%.
 
 \section{Señal Triangular}
 %http://mathworld.wolfram.com/FourierSeriesTriangleWave.html sacado de aca
@@ -88,7 +94,11 @@ $x(t) = \sum\frac{8\cdot A\cdot (-1)^\frac{n-1}{2}}{(n\cdot\pi)^2}\cdot sen(2\pi
 \end{center}
 Donde $X_n = \frac{8\cdot A\cdot (-1)^\frac{n-1}{2}}{(n\cdot\pi)^2}$ son los coeficientes de Fourier de la serie, que definen la amplitud de cada armónico.\par
 
+Se vuelve a observar que se anulan los armónicos pares por el duty cycle del 50\% y el hecho de que la señal triangular tiene simetría de media onda.\par
+Dado que el generador no puede generar triangulares de mayo
 \subsection{Simulación de amplitud y potencia de armónicos}
+
+
 
 \subsection{Mediciones y comparación de resultados}
 \begin{table}[H] %señal triangular, mediciones
