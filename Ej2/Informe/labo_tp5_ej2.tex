@@ -20,21 +20,21 @@ De la fórmula anterior se deduce que la señal cuadrada tiene compontes en frec
 En particular, la consigna indica que la señal de entrada deberá tener una amplitud de $250mV_{pp}$ y una frecuencia $f_0 = 1.7MHz$. Como el generador fue configurado en HiZ en el punto anterior y quedó configurado de esta manera cuando las mediciones fueron realizadas, se deberá tener en cuenta la transferencia del circuito formado entre la resistencia del generador de $50\ohm$  en serie con los $50\ohm$ del analizador de espectros, sobre el cual se realizarán las mediciones de potencia, por lo que debe tenerse en cuenta el divisor resistivo que hace que se pierda un 50\% de la amplitud de la señal al ser medida por el analizador. Esto implica que las simulaciones para los armónicos deberán hacer hacerse con una amplitud de $250mV_{pp}$.\par
 Simulando con MATLAB 20 armónicos de dicha señal obtenemos el siguiente espectro: \par
 
-\begin{figure}[H]	
-	\centering
-	\includegraphics[scale=0.2]{imagenes/espectro_cuadrada_20_armonicos.png}
-	\caption{20 armónicos de la señal cuadrada de entrada}
-	\label{fig:ej1_espectro_cuadrada_20_armonicos}
-\end{figure}
+%\begin{figure}[H]	
+	%\centering
+	%\includegraphics[scale=0.2]{imagenes/espectro_cuadrada_20_armonicos.png}
+	%\caption{20 armónicos de la señal cuadrada de entrada}
+	%\label{fig:ej1_espectro_cuadrada_20_armonicos}
+%\end{figure}
 
 Dada que la potencia estará ligada al cuadrado del módulo de la amplitud del armónico y teniendo en cuenta que esta potencia será medida sobre una resistencia de $50\ohm$, podemos simular también el diagrama espectral de potencia de la señal bajo la fórmula $\frac{|X_n|^2}{50}$:\par
 
-\begin{figure}[H]	
-	\centering
-	\includegraphics[scale=0.2]{imagenes/espectro_cuadrada_potencia.png}
-	\caption{20 armónicos de potencia para la señal cuadrada de entrada}
-	\label{fig:ej1_espectro_cuadrada_potencia}
-\end{figure}
+%\begin{figure}[H]	
+	%\centering
+	%\includegraphics[scale=0.2]{imagenes/espectro_cuadrada_potencia.png}
+	%\caption{20 armónicos de potencia para la señal cuadrada de entrada}
+	%\label{fig:ej1_espectro_cuadrada_potencia}
+%\end{figure}
 
 Luego, utilizamos el analizador de espectros del laboratorio para poder medir la potencia de dichos armónicos. Para ello, fijamos la atenuación en 10dB y con el cursor seleccionamos el pico de cada armónico. De aquí obtuvimos la siguiente tabla de datos al haber medido como mínimo 10 armónicos para tener una medida representativa. Debe aclararse que como el generador no es ideal, la potencia de los armónicos pares no será nula, pero su potencia deberá ser indefectiblemente más pequeña que la de sus armónicos impares adyacentes.
 
@@ -95,9 +95,9 @@ $x(t) = \sum\frac{8\cdot A\cdot (-1)^\frac{n-1}{2}}{(n\cdot\pi)^2}\cdot sen(2\pi
 Donde $X_n = \frac{8\cdot A\cdot (-1)^\frac{n-1}{2}}{(n\cdot\pi)^2}$ son los coeficientes de Fourier de la serie, que definen la amplitud de cada armónico.\par
 
 Se vuelve a observar que se anulan los armónicos pares por el duty cycle del 50\% y el hecho de que la señal triangular tiene simetría de media onda.\par
-Dado que el generador no puede generar triangulares de mayo
-\subsection{Simulación de amplitud y potencia de armónicos}
+Dado que el generador no puede generar triangulares de mayor frecuencia , se seleccionó la frecuencia máxima como 200kHz.\par
 
+\subsection{Simulación de potencia de armónicos}
 
 
 \subsubsection{Mediciones y comparación de resultados}
@@ -119,24 +119,17 @@ Dado que el generador no puede generar triangulares de mayo
 
 \subsection{Tren de pulsos}
 
-\subsubsection{Desarrollo de Fourier}
-
-El desarrollo en serie de Fourier de una onda triangular $x(t) = \delta_T(t) = A\cdot\sum_{n\epsilon \mathbb{Z}}\delta(t-n\cdot T)$, de frecuencia $f_0$, de duty cycle 33.33\% y amplitud $A$ (tensión pico) resulta ser: \par
-
-\begin{center}
-$$x(t) = \frac{A}{T}\cdot\sum_{n\epsilon \mathbb{Z}}\delta(f-n\cdot f_0\cdot d)$$
-\end{center}
-donde $\frac{1}{3} = \frac{d}{T} = f_0\cdot d$.
+Siguiendo la fórmula desarrollada en la sección sobre el cálculo del duty cycle, observamos que para la relación $d \cdot f_0= \frac{d}{T}= \frac{1}{3} $, (duty cycle del 33.33\%) se anularán los terceros armónicos de la señal\par
 
 \subsubsection{Simulación de amplitud y potencia de armónicos}
-El espectro simulado para el tren de impulsos es:\par
-
-\begin{figure}[H]	
-	\centering
-	\includegraphics[scale=0.4]{imagenes/espectro_tren_pulsos.png}
-	\caption{20 armónicos de potencia para el tren de deltas}
-	\label{fig:ej1_espectro_tren_pulsos}
-\end{figure}
+El espectro simulado para el tren de pulsos es:\par
+%
+%\begin{figure}[H]	
+	%\centering
+	%\includegraphics[scale=0.4]{imagenes/espectro_tren_pulsos.png}
+	%\caption{20 armónicos de potencia para el tren de deltas}
+	%\label{fig:ej1_espectro_tren_pulsos}
+%\end{figure}
 
 \subsubsection{Mediciones y comparación de resultados}
 \begin{table}[H] %pulsos, mediciones
@@ -159,5 +152,4 @@ El espectro simulado para el tren de impulsos es:\par
 			\hline
 		\end{tabular}
 \end{table}
-Se observa de los datos de la tabla una tendencia decreciente de los datos de potencia a medida que aumenta la frecuencia. En particular, estos datos decrecen en un orden cuadrático. Esto se explica al notar que el generador no crea impulsos ideales, sino que los crea a partir de ondas cuadradas de ancho de pulso muy bajo. Esto demuestra muestra entonces que la onda generada va a cumplir con el espectro de una onda cuadrada, por lo que se podrá apreciar la forma de la función sinc(t). Se observa también que los armónicos múltiplos de 3 se atenúan/eliminan, lo cual es explicado por el duty cycle del 33.33\%.
-\end{document}
+
