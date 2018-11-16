@@ -5,8 +5,18 @@
 %capítulo
 \section{Ejercicio 3}
 
-A continuaci\'on se analizar\'a el espectro de se\~nales moduladas en amplitud.
+La modulación AM (Amplitude Modulation) consiste en modificar la amplitud de una señal portadora senoidal, $S_p(t)$ de amplitud y frecuencia fija, en base a la amplitud de una señal moduladora, $S_m(t)$. 
+La señal modulada por AM estará dada entonces por la fórmula $S_{AM}(t) = (1 + m\cdot S_m(t))\cdot S_p(t)$, donde m es el coeficiente de modulación, definido por: $\frac{V_{max} - V_{min}}{V_{max} + V_{min}}$.\par
+Observando la modulación entre señales senoidales, podremos luego analizar el caso en que $S_m(t)$ no sea senoidal por superposición. \par
 
+Para el caso en que tanto $S_p(t)$ como $S_m(t)$ sean senoidales, por lo tanto, se obtendrá:\par
+\begin{center}
+$S_{AM}(t) = A_p\cdot (1 + m\cdot cos(2\pi f_m\cdot\cdot t))\cdot cos(2\pi f_p\cdot t)$\par
+$S_{AM}(t) = A_p\cdot cos(2\pi f_p\cdot t) + A_p\cdot cos(2\pi f_p\cdot t)\cdot m\cdot cos(2\pi f_m\cdot\cdot t)\cdot cos(2\pi f_p\cdot t)$\par
+$S_{AM}(t) = A_p\cdot cos(2\pi f_p\cdot t) + \frac{A_p\cdot m}{2}\cdot [cos(2\pi \cdot (f_p-f_m)\cdot t) + cos(2\pi (f_p+f_m)\cdot t)]$\par
+\end{center}
+
+Por lo que se observarán tres frecuencias principales para la señal modulada y luego sus respectivos armónicos.\par
 
 
 \end{document}
