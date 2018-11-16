@@ -1,3 +1,58 @@
+
+#ignora extras de altium, latex y LTspice, carpetas comprimidas, pdfs y archivos de configuracion de windows.
+
+*.pdf
+
+## configuracion de windows ##
+*.ini
+
+
+
+## LTspice ##
+*.net
+*.raw
+*.op.raw
+*.log
+*.plt
+*.fft
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+
+# Created by https://www.gitignore.io/api/latex,altium
+
+### Altium ###
+# Previews Folders
+**/__Previews/
+
+# History Folders
+**/History/*
+
+# Project Logs
+Project\ Logs*/
+
+# Project Outputs
+Project\ Outputs*/
+
+# Auto-conversion notices
+*.PcbDoc.htm
+
+# Access lock file for dbLib sources
+**/*.ldb
+
+
+### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -39,6 +94,10 @@
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+
+## Build tool directories for auxiliary files
+# latexrun
+latex.out/
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms
@@ -184,6 +243,9 @@ sympy-plots-for-*.tex/
 *.pytxcode
 pythontex-files-*/
 
+# tcolorbox
+*.listing
+
 # thmtools
 *.loe
 
@@ -222,6 +284,9 @@ TSWLatexianTemp*
 # Texpad
 .texpadtmp
 
+# LyX
+*.lyx~
+
 # Kile
 *.backup
 
@@ -238,5 +303,9 @@ TSWLatexianTemp*
 # standalone packages
 *.sta
 
-# generated if using elsarticle.cls
-*.spl
+### LaTeX Patch ###
+# glossaries
+*.glstex
+
+
+# End of https://www.gitignore.io/api/latex,altium
