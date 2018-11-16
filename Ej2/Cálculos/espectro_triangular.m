@@ -10,11 +10,11 @@ N  = 20; %cantidad de armonicos que se muestran
 x = 1 : N;
 x  = x*f;
 y = zeros([1 N]);
-
+% \frac{8\cdot A\cdot (-1)^\frac{n-1}{2}}{(n\cdot\pi)^2}
 
 for n = 1:N  
      if(rem(n,3))   %si es impar
-         y(n) = (A/2)^(2)/50;
+         y(n) = (4 *A*(-1)^((n-1)/2)/ n^2 / pi()^2)^(2);
      end;
 end;
 
